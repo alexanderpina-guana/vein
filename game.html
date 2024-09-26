@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <script>
+        //Game Running Code
+        function playGame(){
+            //what is going to happen in the code
+            console.log("playGame function was called");
+            
+            //dice rolling
+            var die1 = rollDie();
+            console.log("the first die roll is:" + die1);
+
+            //dice rolling
+            var die2 = rollDie();
+            console.log("the first die roll is:" + die2);
+
+            //dice roll sum
+            var sum = die1 + die2;
+            console.log("the sum is: " + sum);
+
+            // output the dice rolls to the page
+            document.getElementById("die1results").textContent = "Die 1: " + die1;
+            document.getElementById("die2results").textContent = "Die 2: " + die2;
+            document.getElementById("sumResults").textContent = "Score: " + sum;
+
+            // game logic
+            if (sum == 7 || sum == 11){
+                document.getElementById("gameResults").textContent = "You Lose."
+            }
+            else if(die1 == die2 && die1 % 2 == 0){
+                document.getElementById("gameResults").textContent = "You Win."
+            }
+            else(
+                document.getElementById("gameResults").textContent = "Neutral."
+            )
+
+
+        }
+        //Dice Function - d6
+        function rollDie(){
+            //random number 1-6
+            var die = Math.random() * 6;
+            //return the random number to the code that called this function
+            return Math.ceil(die); // return number
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Click to Roll Dice!</h1>
+    </header>
+
+    <main>
+        <button onclick="playGame();">Roll</button>
+        <div id="gameResults">Game Results</div>
+        <div id="die1results">Die 1 Result</div>
+        <div id="die2results">Die 2 Result</div>
+        <div id="sumResults">Sum Result</div>
+    </main>
+</body>
+</html>
