@@ -1,0 +1,29 @@
+/* body applies to whole page */
+body{
+    background-color: aquamarine;
+    color: teal;
+    width: 100%;
+}
+
+header{
+    text-align: center;
+}
+
+nav{
+    height: 600px;
+    width: 200px;
+    float: left;
+    padding: 5px;
+    list-style: 30px;
+}
+
+footer{
+    text-align: center;
+    margin-right: 200px;
+}
+
+#memeImage{
+    margin-right: 200px;
+    width: 400px;
+
+}
