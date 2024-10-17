@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+<!--Screen Structure-->
+    <h2>Please Login</h2>
+    <br>
+    <br>
+    <form method="post" onsubmit="return validateForm();">
+        <label for="fname"> First Name:</label>
+        <input type="text" id="fName" name="fName">
+        <br>
+        <label for="fname"> Last Name:</label>
+        <input type="text" id="1Name" name="1Name">
+        <br>
+        <label for="fname"> Zip Code:</label>
+        <input type="number" id="zip" name="zip">
+        <br>
+        <input type="submit" value="Login">
+    </form>
+        <!--Detects whether it is valid-->
+    <script>
+        function validateForm(){
+            var firstName = document.getElementById("fName").value;
+            var lastName = document.getElementById("1Name").value;
+            var zipCode = document.getElementById("zip").value;
+
+            var fullName = firstName + " " + lastName;
+
+            console.log("first name =" + firstName);
+            console.log("first name =" + lastName);
+            console.log("first name =" + zipCode);
+            console.log("first name =" + fullName);
+
+            if(fullName.length > 20 || fullName.length == 1){
+                alert("Please enter a valid name that is less than 20 character");
+            }
+            else if(zipCode.length != 5){
+                alert("Please enter a 5 digit zip code");
+            }
+            else{
+                alert("Welcome," + fullName + ", the Secret Word if Validation")
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>
