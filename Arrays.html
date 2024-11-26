@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>Pizza Chef Array Example</h1>
+
+    <p>Total Pizzas Baked:<span id="spnTotalPizzas">0</span></p>
+
+    <p>Baking LevelL<span id="spnLevel">Beginner Chef</span></p>
+
+    <label for="numPizzas">New Pizzas Baked:</label>
+    <input typr="number" id="numPizzas" min="0" max="1000" value="0">
+
+    <button onclick="updateChefStats();">Update Stats</button>
+
+    <p>Toppings: <span id="spnToppings"></span></p>
+
+    <!--- Script-->
+    <script>
+        //function to add pizzas baked
+        function updateChefStats(){
+            //get new pizzas
+            var newPizzas = parseInt(document.getElementById("numPizzas").value);
+            //get the number of old pizzas
+            var oldPizzas = parseInt(document.getElementById("spnTotalPizzas").textContent);
+
+            console.log("newPizzas=" + newPizzas);
+            console.log("oldPizzas=" + oldPizzas);
+
+            //bring pizzas together
+            var totalPizzas = newPizzas + oldPizzas;
+
+            //update counter
+
+            document.getElementById("spnTotalPizzas").textContent = totalPizzas
+
+            //this variable will track the level of the chef, based on how many pizzas they have baked
+
+            var chefLevel = "";
+
+            //add logic
+            if(totalPizzas > 500){
+                
+                chefLevel = "Master Chef";
+
+            }
+            else if (totalPizzas > 300){
+                //300
+                chefLevel = "Expert Chef";
+            }
+            else if (totalPizzas > 100){
+                //100
+                chefLevel = "Skilled Chef"
+            }
+            else{
+                //Catch All
+                chefLevel = "Beginner Chef"
+            }
+
+            document.getElementById("spnLevel").textContent = chefLevel;
+        }
+        //Toppings
+        var topping1 = "Pepperoni";
+        var topping2 = "Mushrooms";
+        var topping3 = "Olives";
+        var topping4 = "Sausages";
+        var topping5 = "Ham";
+        var topping6 = "Anchovies";
+        var topping7 = "Pineapple";
+        var topping8 = "Cinnamon";
+
+
+        var arrToppings = ["Pepperoni", "Mushrooms", "Olives", "Sausages", "Ham", "Anchovies", "Pineapple", "Cinnamon"];
+
+        //Topping Sorting
+
+        for(var i = 0; i < arrToppings.length; i++){
+            document.getElementById("spnToppings").innerHTML += arrToppings[i]; + ",&nbsp;";
+
+            document.getElementById("spnTopping").innerText = document
+
+        }
+    </script>
+</body>
+</html>
