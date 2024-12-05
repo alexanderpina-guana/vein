@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+    <style>
+        table{
+            width: 90%;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            border-collapse: collapse;
+        }
+
+        th{
+            background-color: darkgreen;
+            color:aqua;
+            text-align: left;
+        }
+
+        td{
+            background-color: lightgray
+        }
+
+        td, th{
+            padding: 20px;
+            border: 1px solid black
+        }
+    </style>
+</head>
+<body>
+    <table id="tblData">
+        <!--Set up the Header-->
+        <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Job Title</th>
+        </tr>
+    </table>
+
+    <script>
+        //2-Dimensional Array
+    var arrEmployees = [
+        ['John Doe', 'HR','Generalist'],
+        ['Jane Smith', 'Sales', 'Lead Generator'],
+        ['Emily Davis', 'IT', 'Network'],
+        ['Fred Jones', 'Management', 'CEO']
+    ];
+
+    // function to build the table rows and colums to show the data
+    function displayData(){
+        //table element
+        var table = document.getElementById("tblData");
+
+        //loop
+        for(var i=0; i<arrEmployees.length; i++){
+            var employee = arrEmployees[i];
+
+            var row = document.createElement("tr");
+
+            for(var j=0; j<employee.length; j++){
+                var column = document.createElement("td");
+
+                column.textContent = employee[j];
+
+                row.appendChild(column);
+             }
+
+            //Add row
+            table.appendChild(row);
+        }
+    }
+
+    // call function
+    displayData();
+    </script>
+</body>
+</html>
