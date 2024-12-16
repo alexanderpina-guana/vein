@@ -11,7 +11,18 @@
             background-color: seagreen;
         }*/
     </style>
+
+   <script>
+    var intervalid = 0;
+    function moveImage(){
+        document.getElementById("startButton").disabled = true;
+        document.getElementById("stopButton").disabled = false;
+
+        var image
+    }
+   </script>
 </head>
+
 <body>
     <!-- Picture -->
     <header>
@@ -20,13 +31,33 @@
         <nav>
             <a href="Index.html">Home</a>
             <br>
-            <a href="boards.html">Home</a>
+            <a href="boards.html">Boards</a>
+            <br>
+            <a href="woodstring.html">Login</a>
+            <br>
+            <a href="FileOne.html">Enter</a>
+            <br>
+            <a href="game.html">Game</a>
+            <br>
+            <a href="Soubd.html">Sound</a>
+            <br>
+            <a href="eventide.html">Click Me</a>
+            <br>
+            <a href="palindrome.html">Palindrome</a>
+            <br>
+            <a href="Arrays.html">Arrays</a>
+            <br>
+            <a href="Table.html">Table</a>
+            <br>
+            <a href="tableDyn.html">Dynamic Table</a>
         </nav>
 
     </header>
 
     <!-- paragraph -->
     <p>
+        <input type="button" id="startButton" value="start Moving Image" onclick="moveImage();">
+        <input type="button" id="stopButton" value="stop Moving Image" onclick="stopmoveImage();">
           <img src="picardi.jpg" id="memeImage">
     </p>
 
